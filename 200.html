@@ -362,7 +362,30 @@ footer a:hover{color:var(--gold)}
   <span class="kicker" style="color:var(--gold)">Επικοινωνία</span>
   <h2 style="margin-top:20px">Πες μας τι θα<br><em>μαγειρέψεις</em></h2>
   <p class="lede" style="color:color-mix(in srgb,var(--paper) 75%,transparent);max-width:50ch;margin:0 auto 34px">Στείλε τη συνταγή ή απλώς τι έχεις στο μυαλό σου. Θα σου πούμε ποια κοπή θέλει και σε τι πάχος — και θα την κόψουμε.</p>
-  <a class="btn btn-gold" href="mailto:info@aionweb.gr?subject=Κοπή%20από%20τον%20πάγκο">Γράψε μας</a>
+  
+<form class="demof" onsubmit="event.preventDefault();this.querySelector('.ok').classList.add('show');this.reset();">
+  <div class="fr">
+    <label>Όνομα<input type="text" name="name" placeholder="Το όνομά σας" required></label>
+    <label>Τηλέφωνο<input type="tel" name="phone" placeholder="210 000 0000" required></label>
+  </div>
+  <label>Μήνυμα<textarea name="message" rows="3" placeholder="Πείτε μας τι χρειάζεστε"></textarea></label>
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+  <button type="submit">Αποστολή αιτήματος</button>
+  <p class="ok">Το αίτημα καταχωρήθηκε. Θα επικοινωνήσουμε μαζί σας.</p>
+</form>
+<style>
+.demof{display:grid;gap:16px;max-width:520px;margin:0 auto;text-align:left}
+.demof .fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.demof .fr{grid-template-columns:1fr}}
+.demof label{display:grid;gap:8px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.demof input,.demof textarea{width:100%;padding:14px 15px;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.08);color:inherit;font:inherit;font-size:.95rem;border-radius:0}
+.demof input::placeholder,.demof textarea::placeholder{opacity:.55}
+.demof input:focus,.demof textarea:focus{outline:2px solid #fff;outline-offset:2px;border-color:#fff}
+.demof button{padding:17px;border:0;background:#fff;color:#14100C;font:inherit;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.3s}
+.demof button:hover{background:rgba(255,255,255,.85);transform:translateY(-4px)}
+.demof .ok{display:none;font-size:.9rem;padding:14px;border:1.5px solid #fff;background:rgba(255,255,255,.12)}
+.demof .ok.show{display:block}
+</style>
 </div></section>
 
 <footer><div class="wrap">
